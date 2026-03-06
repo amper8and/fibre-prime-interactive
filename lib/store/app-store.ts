@@ -18,7 +18,7 @@ interface AppState {
   // Bundle
   bundleItems: BundleItem[];
   selectedFibrePlan: FibrePlan | null;
-  addToBund le: (item: BundleItem) => void;
+  addToBundle: (item: BundleItem) => void;
   removeFromBundle: (itemId: string) => void;
   setFibrePlan: (plan: FibrePlan) => void;
   getTotalMonthly: () => number;
