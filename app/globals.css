@@ -1,26 +1,107 @@
 @import "tailwindcss";
 
+/* MTN Fibre Prime Design System */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* MTN Brand Colors */
+  --mtn-yellow: #FFCB00;
+  --mtn-black: #000000;
+  --mtn-white: #FFFFFF;
+  --mtn-light-bg: #F8F8F8;
+  --mtn-grey-border: #E5E5E5;
+  --mtn-grey-text: #666666;
+
+  /* Semantic Colors */
+  --background: #FFFFFF;
+  --foreground: #000000;
+  
+  /* Spacing Scale */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 32px;
+  --spacing-3xl: 48px;
+  --spacing-4xl: 64px;
+
+  /* Border Radius */
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-large: 16px;
+  --radius-xlarge: 24px;
+
+  /* Shadows */
+  --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+  --shadow-panel: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
 }
 
 @theme inline {
+  /* MTN Brand Colors */
+  --color-mtn-yellow: var(--mtn-yellow);
+  --color-mtn-black: var(--mtn-black);
+  --color-mtn-white: var(--mtn-white);
+  --color-mtn-light-bg: var(--mtn-light-bg);
+  --color-mtn-grey-border: var(--mtn-grey-border);
+  --color-mtn-grey-text: var(--mtn-grey-text);
+  
+  /* Semantic Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'MTN Brighter Sans', Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Font Face for MTN Brighter Sans */
+@font-face {
+  font-family: 'MTN Brighter Sans';
+  src: url('/fonts/MTN-BrighterSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MTN Brighter Sans';
+  src: url('/fonts/MTN-BrighterSans-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MTN Brighter Sans';
+  src: url('/fonts/MTN-BrighterSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Utility Classes */
+.container-app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+.text-balance {
+  text-wrap: balance;
 }
